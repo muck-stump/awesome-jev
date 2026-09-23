@@ -59,6 +59,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [nokia-applied-research/AnyJev](https://github.com/nokia-applied-research/AnyJev) - A training-free calibration layer turning any open LLM's next-token logits into a Jev-style typed decision: zero-label recalibration cuts the answer-order-flip rate from 23% to 7.3%, and a few hundred labels bring calibration error from 0.240 to 0.095.
 - [wnzn/semif-go](https://github.com/wnzn/semif-go) - A Jev-like decision API server over local llama.cpp models, answering choice/yes-no/score questions on text or images without generating JSON; built on the scorer from TheoLeeCJ/SemIf above.
 - [Mapika/decider-2b](https://huggingface.co/Mapika/decider-2b) - An Apache-2.0 2B-parameter Jev-style decision model on Qwen3.5, with a vision variant and a GGUF quantization; over 130k combined downloads on Hugging Face.
+- [wfzyx/von](https://github.com/wfzyx/von) - An Open-Source, Non-Autoregressive System One Decision Model. Calibrated discrete, probabilistic, and ordinal inference in sub-25ms.
 
 ## Coding Agents & Dev Tools
 
