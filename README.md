@@ -60,6 +60,9 @@ Every link below was resolved from its original source tweet/thread and verified
 - [wnzn/semif-go](https://github.com/wnzn/semif-go) - A Jev-like decision API server over local llama.cpp models, answering choice/yes-no/score questions on text or images without generating JSON; built on the scorer from TheoLeeCJ/SemIf above.
 - [Mapika/decider-2b](https://huggingface.co/Mapika/decider-2b) - An Apache-2.0 2B-parameter Jev-style decision model on Qwen3.5, with a vision variant and a GGUF quantization; over 130k combined downloads on Hugging Face.
 - [wfzyx/von](https://github.com/wfzyx/von) - An Open-Source, Non-Autoregressive System One Decision Model. Calibrated discrete, probabilistic, and ordinal inference in sub-25ms.
+- [Contrastive-LM/CLM](https://github.com/Contrastive-LM/CLM) - Contrastive Language Models: a System One model that embeds states and actions separately and matches them by similarity instead of answering typed questions, reporting on-par accuracy with Jev at up to 9x lower latency.
+- [togethercomputer/tev1](https://github.com/togethercomputer/tev1) - Together AI's open-weight reproduction: Qwen3.5-4B fine-tuned via LoRA on ~38K examples to pick one answer letter from 2-24 options, released with the full data recipe and a $17 training-cost writeup.
+- [fastino/GLiNER2.5-Decide](https://huggingface.co/fastino/GLiNER2.5-Decide) - Fastino Labs' 340M-parameter Apache-2.0 encoder decision model; scored 60.1% on their own Fast Decisions benchmark, ahead of Laya (46.6%) and a Jev-based baseline (57.5%).
 
 ## Coding Agents & Dev Tools
 
@@ -112,6 +115,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [Dicklesworthstone/skillranker](https://github.com/Dicklesworthstone/skillranker) - A Rust CLI that uses Jev to rank which agent skill to load next from live session context, with Claude Code hooks and an abstain option.
 - [Kevthetech143/super-jev](https://github.com/Kevthetech143/super-jev) - A small, extensible decision-to-action harness built on Jev.
 - [libingzheren/Jev-Mem](https://github.com/libingzheren/Jev-Mem) - Research code for "System-One-Controlled Agentic Memory": using Jev-style typed decisions to gate what an agent writes to and retrieves from memory.
+- [Avinash-jetwani/jevmem](https://github.com/Avinash-jetwani/jevmem) - Automatic project memory for Claude Code, Cursor, and Codex: Jev decides which decisions, constraints, bugs, and todos from a session are worth writing to `JEVMEM.md`.
+- [monteduro/killmyidea](https://github.com/monteduro/killmyidea) - Describe a startup idea and Jev answers 10 typed questions in parallel (8 scored criteria plus category and clarity) to return a kill/fix/ship verdict.
 
 ## SDKs, Frameworks & Platform Integrations
 
@@ -158,6 +163,8 @@ Every link below was resolved from its original source tweet/thread and verified
 - [seanebones-lang/evidencelens](https://github.com/seanebones-lang/evidencelens) - An open-source research build testing Jev for bounded semantic evidence review and human-review triage.
 - [sedthh/xjevboost](https://github.com/sedthh/xjevboost) - Use larger tabular datasets with Jev by learning which rows and columns to include in each call, reducing token usage through adaptive ensembles.
 - [kylemclaren/jevql](https://github.com/kylemclaren/jevql) - A psql-style CLI, MCP server, and Go/TypeScript/Python SDKs that add `jev()` predicates to queries against vanilla PostgreSQL, with no extension.
+- [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) - A tax document page classifier built on Jev: one request per PDF page returns a probability over 261 IRS forms and 7 page kinds, with no model trained or hosted.
+- [AkashPriyadarshii/jev-curate](https://github.com/AkashPriyadarshii/jev-curate) - A Rust/Python streaming pipeline that filters and scores Parquet/JSONL dataset rows through Jev's Choice/Score/Noul primitives for synthetic-data and pretraining-corpus cleanup.
 
 ## Content, Media & Moderation
 
@@ -179,11 +186,14 @@ Every link below was resolved from its original source tweet/thread and verified
 - [CPPAlien/playwithjev](https://github.com/CPPAlien/playwithjev) - A playable chess game against Jev with live typed inputs and probabilities.
 - [thelau/jev-tetris](https://github.com/thelau/jev-tetris) - A Tetris where every legal placement is enumerated as a sentence and Jev points at one, visualizing its full probability distribution.
 - [trycua/cua](https://github.com/trycua/cua/tree/main/libs/cua-s1) - See `libs/cua-s1`: home of `cua-s1-form-v0`, a 706K-parameter, MIT-licensed specialist model that fills web forms from UI state in ~50ms.
+- [TholeG/typesafe-chess](https://github.com/TholeG/typesafe-chess) - Two Jev instances play chess against each other: every move is a typed Choice over the legal moves plus a Score position evaluation, optionally driving an AlphaZero-style MCTS.
+- [lukaske/jev-doom-agent](https://github.com/lukaske/jev-doom-agent) - Runs two Chocolate Doom instances compiled to WebAssembly and has Jev pick a tactical macro from structured game state each tick, visibly falling back to an offline policy on a failed or low-confidence call.
 
 ## Finance & Trading
 
 - [jarrodwatts/jev-trader](https://github.com/jarrodwatts/jev-trader) - Makes one AI trade decision per Monad block on Kuru MON-USDC; defaults to mock/dry-run without a configured private key.
 - [svmanth/jmarket](https://github.com/svmanth/jmarket) - A Chrome extension giving Jev's own forecast on Polymarket-style questions instead of the crowd's.
+- [OpenByteInc/QuantDinger](https://github.com/OpenByteInc/QuantDinger) - A self-hosted, open-source AI trading OS (strategy research, backtesting, paper/live execution) that gates trade entry behind a Jev System One decision filter.
 
 ## Benchmarks & Evaluation
 
@@ -196,6 +206,7 @@ Every link below was resolved from its original source tweet/thread and verified
 - [zilliztech/deep-searcher](https://github.com/zilliztech/deep-searcher/blob/master/evaluation/jev_stopping/README.md) - Uses Jev to decide when an agentic search workflow has gathered enough evidence to stop; across 100 multi-hop questions it matched DeepSeek V4 Flash's 93.25% Recall@5 while cutting median decision latency from 2.23s to 0.55s.
 - [zilliztech/memsearch](https://github.com/zilliztech/memsearch/blob/main/evaluation/reranking-evaluation.md) - Jev-based memory reranking raised Recall@5 from 74.71% to 79.41% over the baseline, though it still trailed Voyage rerank-3's 81.87%.
 - [zilliztech/vector-graph-rag](https://github.com/zilliztech/vector-graph-rag/blob/main/evaluation/jev/README.md) - Jev filters graph relationships for HotpotQA/MuSiQue multi-hop QA, beating GPT-4o-mini but trailing GPT-5-mini on relationship-selection accuracy.
+- [crzyc0d3r/jev-agent-judge](https://github.com/crzyc0d3r/jev-agent-judge) - Evaluates recorded support-agent traces with typed Jev judgments (grounded, honest, relevant, helpful) and logs each as an Opik experiment, routing mid-confidence scores to human review.
 
 ## Articles, Threads & Playbooks
 
